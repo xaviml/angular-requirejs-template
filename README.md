@@ -1,2 +1,2 @@
-# angular-requirejs-template
-This is a template project with angular and requirejs integrated
+# angularjs-requirejs-template
+This is a template project with angularjs and requirejs integrated
