@@ -1,5 +1,5 @@
 {
-  "name": "anfular-demo",
+  "name": "angularjs-requirejs-template",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.2",
