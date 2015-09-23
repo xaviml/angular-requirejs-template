@@ -1,6 +1,6 @@
 define(['angular'], function (ng) {
     'use strict';
-    var module = ng.module('app.mymodule', ['ui.router']);
+    var module = ng.module('app.mymodule', ['ui.router', 'chart.js']);
 
     module.config(['$stateProvider', function ($stateProvider) {
         $stateProvider

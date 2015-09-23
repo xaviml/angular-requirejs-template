@@ -5,7 +5,9 @@ require.config({
         'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router',
         'angular-bootstrap': '../lib/angular-bootstrap/ui-bootstrap',
         'angular-resource': '../lib/angular-resource/angular-resource',
-        'domReady': '../lib/requirejs-domready/domReady'
+        'domReady': '../lib/requirejs-domready/domReady',
+        'chart': '../lib/Chart.js/Chart',
+        'angular-chart': '../lib/angular-chart.js/angular-chart'
     },
 
     shim: {
@@ -20,6 +22,12 @@ require.config({
         },
         'angular-resource': {
             deps: ['angular']
+        },
+        'chart': {
+            exports: 'chart.js'
+        },
+        'angular-chart': {
+            deps: ['angular', 'chart']
         }
     },
 
