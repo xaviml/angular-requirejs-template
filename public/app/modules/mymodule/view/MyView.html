@@ -3,8 +3,24 @@
         <div class="chart-container">
             <canvas id="line" class="chart chart-line" chart-data="data"
                     chart-labels="labels" chart-legend="true" chart-series="series"
-                    chart-click="onClick" >
+                    chart-click="onClick" chart-options="options">
             </canvas>
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h3>{{series[0]}}</h3>
+        <progressbar class="progress-striped active" value="bar1.value" type="{{bar1.type}}" max="100">
+            <span ng-hide="bar1.value < 20">{{bar1.value |number:2}}%</span>
+        </progressbar>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h3>{{series[1]}}</h3>
+        <progressbar class="progress-striped active" value="bar2.value" type="{{bar2.type}}" max="100">
+            <span ng-hide="bar2.value < 20">{{bar2.value |number:3}}%</span>
+        </progressbar>
     </div>
 </div>

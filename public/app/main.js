@@ -3,7 +3,7 @@ require.config({
     paths: {
         'angular': '../lib/angular/angular',
         'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router',
-        'angular-bootstrap': '../lib/angular-bootstrap/ui-bootstrap',
+        'angular-bootstrap': '../lib/angular-bootstrap/ui-bootstrap-tpls',
         'angular-resource': '../lib/angular-resource/angular-resource',
         'domReady': '../lib/requirejs-domready/domReady',
         'chart': '../lib/Chart.js/Chart',
