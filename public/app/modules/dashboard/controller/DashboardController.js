@@ -1,9 +1,8 @@
 define(['../module'], function (module) {
     'use strict';
-    module.controller('myController', [
+    module.controller('dashboardController', [
         '$scope','$interval',
         function ($scope, $interval) {
-            $scope.controllerName = 'myController';
 
             $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
             $scope.series = ['Series A', 'Series B'];

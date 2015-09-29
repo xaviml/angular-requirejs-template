@@ -1,5 +1,6 @@
 define([
-    'modules/mymodule/index',
+    'modules/dashboard/index',
+    'modules/user/index',
     './services/index'
 ], function () {
     'use strict';

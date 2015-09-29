@@ -13,6 +13,7 @@ define([
         'chart.js',
 
         //modules
-        'app.mymodule'
+        'app.dashboard',
+        'app.user'
     ]);
 });

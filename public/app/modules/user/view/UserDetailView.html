@@ -1,0 +1,30 @@
+<h2 class="title">Users</h2>
+<hr class="hr">
+
+<table class="table table-hover">
+    <thead>
+    <th>Id</th>
+    <th>First name</th>
+    <th>Login</th>
+    <th>Correo electrónico</th>
+    <th>Acciones</th>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="user in users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.login}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <button class='btn btn-xs btn-default'
+                        data-ng-click="edit(user)">
+                    <i class='fa fa-pencil-square-o'></i>
+                </button>
+                <button class='btn btn-xs btn-default'
+                        data-ng-click="delete(user)">
+                    <i class='fa fa-trash-o'></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

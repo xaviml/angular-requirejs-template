@@ -1,0 +1,5 @@
+define(
+    [
+        './controller/DashboardController'
+    ]
+    , function () {});
