@@ -1,3 +1,3 @@
-REST_HOST = 'http://www.myapirest.com/api/v1/';
+REST_HOST = '/aggregator/api/v1/';
 
 

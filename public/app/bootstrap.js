@@ -11,7 +11,8 @@ define([
         ng.bootstrap(document, ['app']);
     });
 
-    app.run(function() {
+    app.run(function($http) {
         console.log("Init the web app");
+        $http.defaults.headers.common['Authorization'] = 'Basic YWRtaW46ODFkYzliZGI1MmQwNGRjMjAwMzZkYmQ4MzEzZWQwNTU=';
     });
 });

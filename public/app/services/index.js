@@ -1,4 +1,5 @@
 define(
     [
-        './MyService'
+        './MyService',
+        './UserService'
     ], function () {});

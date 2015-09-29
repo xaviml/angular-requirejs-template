@@ -2,10 +2,14 @@ define(['../module'], function (module) {
     'use strict';
     module.controller('myController2', [
         '$scope',
-        'myService',
-        function ($scope, myService) {
-            $scope.me = myService.findMe();
-            $scope.other = myService.findOther({id: 42});
+        'userService',
+        function ($scope, service) {
+
+            //get - GET object
+            //query - GET array
+            //save - POST
+            //delete & remove - DELETE
+            $scope.users = service.query();
         }
     ]);
 });

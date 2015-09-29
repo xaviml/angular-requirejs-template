@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AngularJS + RequireJS - template</title>
-  <link rel="stylesheet" href="style/css/app.css">
+    <meta charset="utf-8">
+    <title>AngularJS + RequireJS - template</title>
+    <link rel="stylesheet" href="style/css/app.css">
 
     <link rel="stylesheet" href="lib/angular-chart.js/dist/angular-chart.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
-<body>
+<body style="padding-top: 20px; padding-bottom: 20px">
+<div class="container">
+    <ng-include src="'app/partials/navigation.tpl.html'" include-replace></ng-include>
 
-  <ng-include src="'app/partials/navigation.tpl.html'"></ng-include>
-
-  <div data-ui-view data-autoscroll="false"></div>
-
-  <script src="lib/requirejs/require.js" data-main="app/main.js"></script>
+    <div data-ui-view data-autoscroll="false"></div>
+</div>
+<script src="lib/requirejs/require.js" data-main="app/main.js"></script>
 </body>
 </html>
