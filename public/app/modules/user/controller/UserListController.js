@@ -18,7 +18,6 @@ define(['../module'], function (module) {
                 $state.go('userdetail', {id: user.id});
             };
 
-
             $scope.delete = function (user) {
                 user.$delete(
                     function () {
@@ -26,6 +25,10 @@ define(['../module'], function (module) {
                     }
                 );
             };
+
+            $scope.create = function () {
+                $state.go('userdetail',  {id: 'new'});
+            }
         }
     ]);
 });

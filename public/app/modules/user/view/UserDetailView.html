@@ -1,30 +1,60 @@
-<h2 class="title">Users</h2>
+<h2 class="title">{{isNew ? 'Create User' : 'Edit User'}}</h2>
 <hr class="hr">
 
-<table class="table table-hover">
-    <thead>
-    <th>Id</th>
-    <th>First name</th>
-    <th>Login</th>
-    <th>Correo electrónico</th>
-    <th>Acciones</th>
-    </thead>
-    <tbody>
-        <tr data-ng-repeat="user in users">
-            <td>{{user.id}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.login}}</td>
-            <td>{{user.email}}</td>
-            <td>
-                <button class='btn btn-xs btn-default'
-                        data-ng-click="edit(user)">
-                    <i class='fa fa-pencil-square-o'></i>
-                </button>
-                <button class='btn btn-xs btn-default'
-                        data-ng-click="delete(user)">
-                    <i class='fa fa-trash-o'></i>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<form name="form.user" data-ng-submit="submitForm(form.user)" role="form">
+    <div class="form-group col col-6">
+        <label for="firstname">First name</label>
+        <input type="text"
+               class="form-control col col-6"
+               id="firstname"
+               name="firstname"
+               maxlength="20"
+               data-ng-model="user.firstName"
+               required>
+        <div data-ng-show="form.user.firstname.$dirty && form.user.firstname.$invalid">
+            <small class="txt-color-red"
+                   data-ng-show="form.user.firstname.$error.required">
+                First name is required
+            </small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text"
+               class="form-control col col-6"
+               id="login"
+               name="login"
+               data-ng-model="user.login"
+               maxlength="255"
+               required>
+        <div data-ng-show="form.user.login.$dirty && form.user.login.$invalid">
+            <small class="txt-color-red"
+                   data-ng-show="form.user.login.$error.required">
+                Login is required
+            </small>
+        </div>
+    </div>
+    <div class="form-group col col-6">
+        <label for="email">Email</label>
+        <input type="email"
+               id="email"
+               class="form-control col col-6"
+               name="email"
+               maxlength="20"
+               data-ng-model="user.email">
+        <div data-ng-show="form.user.email.$dirty && form.user.email.$invalid">
+            <small class="txt-color-red"
+                   data-ng-show="form.user.email.$error.email">
+                Must be an email adress
+            </small>
+        </div>
+    </div>
+    <footer>
+        <button id="savebtn" name="savebtn"
+                type="submit"
+                data-ng-disabled="form.user.$invalid"
+                class="btn btn-primary col-md-2 pull-right">
+            {{isNew ? 'Create' : 'Save'}}
+        </button>
+    </footer>
+</form>
