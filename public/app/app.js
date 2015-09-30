@@ -3,7 +3,8 @@ define([
     'angular-ui-router',
     'angular-bootstrap',
     'angular-resource',
-    'angular-chart'
+    'angular-chart',
+    'angular-google-maps'
 ], function (angular) {
     'use strict';
 
@@ -11,6 +12,7 @@ define([
         'ui.bootstrap',
         'ngResource',
         'chart.js',
+        'uiGmapgoogle-maps',
 
         //modules
         'app.dashboard',

@@ -4,6 +4,59 @@ define(['../module'], function (module) {
         '$scope','$interval',
         function ($scope, $interval) {
 
+            $scope.map = {
+                center: {
+                    latitude: 40.1451,
+                    longitude: -99.6680
+                },
+                zoom: 8,
+                bounds: {}
+            };
+            $scope.options = {
+                scrollwheel: false
+            };
+            var createRandomMarker = function(i, bounds, idKey) {
+                var lat_min = bounds.southwest.latitude,
+                    lat_range = bounds.northeast.latitude - lat_min,
+                    lng_min = bounds.southwest.longitude,
+                    lng_range = bounds.northeast.longitude - lng_min;
+
+                if (idKey == null) {
+                    idKey = "id";
+                }
+
+                var latitude = lat_min + (Math.random() * lat_range);
+                var longitude = lng_min + (Math.random() * lng_range);
+                var title='m' + i;
+                var ret = {
+                    latitude: latitude,
+                    longitude: longitude,
+                    title: title,
+                    options: {
+                        labelClass:'marker_labels',
+                        labelAnchor:'10 0',
+                        labelContent:title
+                    }
+                };
+                ret[idKey] = i;
+                return ret;
+            };
+
+            $scope.randomMarkers = [];
+            // Get the bounds from the map once it's loaded
+            $scope.$watch(function() {
+                return $scope.map.bounds;
+            }, function(nv, ov) {
+                // Only need to regenerate once
+                if (!ov.southwest && nv.southwest) {
+                    var markers = [];
+                    for (var i = 0; i < 5; i++) {
+                        markers.push(createRandomMarker(i, $scope.map.bounds))
+                    }
+                    $scope.randomMarkers = markers;
+                }
+            }, true);
+
             $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
             $scope.series = ['Series A', 'Series B'];
             $scope.data = [
