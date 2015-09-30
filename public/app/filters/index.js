@@ -1,0 +1,4 @@
+define(
+    [
+        './EmailFilter'
+    ], function () {});

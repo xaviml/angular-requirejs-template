@@ -1,18 +1,34 @@
 <h2 class="title">Users</h2>
 <hr class="hr">
 
+
+<label>
+    <input
+            type="text"
+            class="input col col-3 pull-left"
+            data-ng-model="search">
+</label>
+
+<label>
+    Show users with email
+    <input
+            type="checkbox"
+            class="checkbox col col-1"
+            data-ng-model="email">
+</label>
+
 <button class="btn btn-primary col col-3 pull-right" data-ng-click="create()">Create user</button>
 
 <table class="table table-hover">
     <thead>
-    <th>Id</th>
-    <th>First name</th>
-    <th>Login</th>
-    <th>Email</th>
+    <th><a href="" data-ng-click="order='id'">Id</a></th>
+    <th><a href="" data-ng-click="order='firstName'">First name</a></th>
+    <th><a href="" data-ng-click="order='login'">Login</a></th>
+    <th><a href="" data-ng-click="order='email'">Email</a></th>
     <th>Actions</th>
     </thead>
     <tbody>
-        <tr data-ng-repeat="user in users">
+        <tr data-ng-repeat="user in users | filter:search | orderBy:order | emailFilter:email">
             <td>{{user.id}}</td>
             <td>{{user.firstName}}</td>
             <td>{{user.login}}</td>

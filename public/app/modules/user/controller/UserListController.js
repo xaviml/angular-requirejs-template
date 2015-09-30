@@ -12,6 +12,8 @@ define(['../module'], function (module) {
             //delete & remove - DELETE
             $scope.users = service.query();
 
+            $scope.order = 'email';
+
 
 
             $scope.edit = function (user) {
