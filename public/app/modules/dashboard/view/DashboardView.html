@@ -8,25 +8,33 @@
                     chart-click="onClick" chart-options="options">
             </canvas>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <h3>{{series[0]}}</h3>
-        <progressbar class="progress-striped active" value="bar1.value" type="{{bar1.type}}" max="100">
-            <span ng-hide="bar1.value < 20">{{bar1.value |number:2}}%</span>
-        </progressbar>
+        <div class="centered">
+            <h3>Total: {{onClickValue.Total}} |
+                Active: {{onClickValue.Active}} |
+                Removed: {{onClickValue.Removed}}</h3>
+        </div>
     </div>
     <div class="col-sm-6">
         <h3>{{series[1]}}</h3>
-        <progressbar class="progress-striped active" value="bar2.value" type="{{bar2.type}}" max="100">
-            <span ng-hide="bar2.value < 20">{{bar2.value |number:3}}%</span>
+        <progressbar class="progress-striped active" value="bar1.value" type="{{bar1.type}}" max="bar1.max">
+            <span ng-hide="bar1.value <= 0">{{bar1.value}}</span>
         </progressbar>
+    </div>
+    <div class="col-sm-6">
+        <h3>{{series[2]}}</h3>
+        <progressbar class="progress-striped active" value="bar2.value" type="{{bar2.type}}" max="bar2.max">
+            <span ng-hide="bar2.value <= 0">{{bar2.value}}</span>
+        </progressbar>
+    </div>
+    <div class="col-sm-6">
+        <h3>Ratio: {{(bar1.value/bar2.value) |number:3}}</h3>
     </div>
 </div>
 
 
 <div class="row">
     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
-        <ui-gmap-markers models="randomMarkers" coords="'self'" fit="true" label="'label'" options="'options'">
+        <ui-gmap-markers models="randomMarkers" coords="'self'" label="'label'" options="'options'"> <!--fit="true"-->
         </ui-gmap-markers>
     </ui-gmap-google-map>
 </div>

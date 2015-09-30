@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                 },
                 proxies: [{
                     context: '/aggregator',
-                    host: 'localhost',
+                    host: '192.168.4.83',
                     port: 8080,
                     ws: false,
                     changeOrigin: true
