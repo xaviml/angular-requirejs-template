@@ -22,7 +22,7 @@ define(['../module'], function (module) {
                 zoom: 15,
                 bounds: {}
             };
-            $scope.options = {
+            $scope.optionsMap = {
                 scrollwheel: false
             };
 
@@ -34,7 +34,7 @@ define(['../module'], function (module) {
                 [0, 0, 0, 0, 0, 0, 0]
             ];
 
-            $scope.options = {
+            $scope.optionsChart = {
                 animation: false,
                 scaleBeginAtZero:true
             };

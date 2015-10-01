@@ -5,7 +5,7 @@
         <div class="chart-container">
             <canvas id="line" class="chart chart-line" chart-data="data"
                     chart-labels="labels" chart-legend="true" chart-series="series"
-                    chart-click="onClick" chart-options="options">
+                    chart-click="onClick" chart-options="optionsChart">
             </canvas>
         </div>
         <div class="centered">
@@ -33,7 +33,7 @@
 
 
 <div class="row">
-    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="optionsMap" bounds="map.bounds">
         <ui-gmap-markers models="randomMarkers" coords="'self'" label="'label'" options="'options'"> <!--fit="true"-->
         </ui-gmap-markers>
     </ui-gmap-google-map>
